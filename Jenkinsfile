@@ -13,6 +13,13 @@ pipeline {
                 	     		values 'CentOS-8', 'Debian-10', 'FreeBSD-12', 'windows'
                 	     	  }
                 	 }
+                stages {
+                    stage('Build') {
+                        steps {
+                            sh 'mvn -DskipTests clean install'
+                        }
+                    }
+                }
             }
         }
     }
